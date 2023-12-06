@@ -10,5 +10,9 @@ export default async function MessageList() {
 
   const messages = info.posts;
 
-  return <Message messages={messages} />;
+  return (
+    <div>
+      <Message messages={messages} />
+    </div>
+  );
 }

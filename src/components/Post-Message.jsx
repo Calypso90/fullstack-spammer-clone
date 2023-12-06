@@ -29,7 +29,6 @@ export default function PostMessage() {
       setErrorMsg(info.error);
     } else {
       setNewPost("");
-      setErrorMsg("");
       router.reload();
     }
   }
@@ -37,7 +36,7 @@ export default function PostMessage() {
   return (
     <div>
       <form id="post-container" onSubmit={handleSubmit}>
-        <input
+        <textarea
           id="message-input-box"
           placeholder="Todays chaotic thoughts..."
           value={newPost}
