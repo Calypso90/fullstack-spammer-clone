@@ -11,7 +11,6 @@ export default function PostMessage() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target);
 
     const response = await fetch(`${API_URL}/api/posts`, {
       method: "POST",
@@ -19,7 +18,7 @@ export default function PostMessage() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        newPost,
+        text: newPost,
       }),
     });
 
@@ -29,7 +28,8 @@ export default function PostMessage() {
       setErrorMsg(info.error);
     } else {
       setNewPost("");
-      router.reload();
+      setErrorMsg("");
+      router.refresh();
     }
   }
 

@@ -13,8 +13,7 @@ export default function Message({ messages }) {
           <div key={message.id} className="message-container">
             <p className="message-text">{message.text}</p>
             <div className="action-container">
-              <span>{message.likes}</span>
-              <Likes />
+              <Likes message={message} />
               <button>
                 <FaRegComment />
               </button>
