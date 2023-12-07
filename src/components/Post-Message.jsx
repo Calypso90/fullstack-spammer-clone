@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { API_URL } from "@/lib/API_URL.js";
+import { GiSpray } from "react-icons/gi";
 
 export default function PostMessage() {
   const [newPost, setNewPost] = useState("");
@@ -42,8 +43,11 @@ export default function PostMessage() {
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
         />
-        <p>{errorMsg}</p>
-        <button type="submit">SUBMIT</button>
+        <p id="error-msg">{errorMsg}</p>
+        <button type="submit">
+          <GiSpray />
+          SUBMIT
+        </button>
       </form>
     </div>
   );

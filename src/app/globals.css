@@ -1,23 +1,46 @@
 * {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "GraffitiFont", "Courier New", Courier, monospace;
+  margin: 0px;
+  letter-spacing: 2px;
+  padding: 0px;
+}
+
+@font-face {
+  font-family: "GraffitiFont-title";
+  src: url("../font/ZombiesComingGraffiti-4B8vY.ttf");
+}
+
+@font-face {
+  font-family: "GraffitiFont";
+  src: url("../font/blowbrush.regular.otf");
 }
 
 body {
   background-color: black;
-  background-image: url(../lib/low-poly.png);
+  z-index: -1;
+  background-image: url(../lib/black-brick.png);
+}
+
+img {
+  z-index: 2;
 }
 
 h1 {
-  color: white;
+  color: #04e762;
   margin-left: 10px;
-  font-size: 50px;
-  text-shadow: 3px 3px 5px #1f004e, -3px 3px 5px #1f004e, 3px -3px 5px #1f004e,
-    -3px -3px 5px #1f004e;
+  font-size: 75px;
+  font-family: "GraffitiFont-title", "Courier New", Courier, monospace;
+  letter-spacing: 7px;
+  text-shadow: 3px 3px 5px #026c2e, -3px 3px 5px #026c2e, 3px -3px 5px #026c2e,
+    -3px -3px 5px #026c2e;
 }
 
 span {
-  background-color: white;
+  font-size: 30px;
+}
+
+hr {
+  border: 2px white solid;
 }
 
 #main-div {
@@ -33,21 +56,42 @@ span {
 }
 
 #message-input-box {
-  min-width: 500px;
+  min-width: 75%;
   min-height: 100px;
   margin-left: 10px;
-  background-color: white;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 40px;
+  padding: 10px;
+  color: #00d1e4;
+  text-shadow: 3px 3px 5px #00565e, -3px 3px 5px #00565e, 3px -3px 5px #00565e,
+    -3px -3px 5px #00565e;
+}
+
+#message-input-box::placeholder {
+  color: #00d1e4;
+  text-shadow: 3px 3px 5px #00565e, -3px 3px 5px #00565e, 3px -3px 5px #00565e,
+    -3px -3px 5px #00565e;
 }
 
 .message-container {
-  border: 1px solid black;
-  margin: 10px;
-  background-color: white;
+  color: #04e762;
+  min-width: 75%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 5px #026c2e, -3px 3px 5px #026c2e, 3px -3px 5px #026c2e,
+    -3px -3px 5px #026c2e;
+  border: darkgray 1px solid;
 }
 
 .message-text {
   padding: 5px;
-  background-color: white;
+  color: #ff51df;
+  text-shadow: 3px 3px 5px #5a1a4e, -3px 3px 5px #5a1a4e, 3px -3px 5px #423c41,
+    -3px -3px 5px #5a1a4e;
+  font-size: 45px;
+  letter-spacing: 2px;
+  vertical-align: bottom;
 }
 
 .action-container {
@@ -56,13 +100,77 @@ span {
   gap: 10px;
   margin-left: 10px;
   margin-bottom: 5px;
-  background-color: white;
 }
 
 button {
   background-color: black;
-  color: white;
-  border: 1px solid white;
+  color: #04e762;
   margin-left: 10px;
   padding: 5px 10px;
+  font-size: 30px;
+}
+
+#error-msg {
+  color: white;
+}
+
+.comment-message-text {
+  margin: 10px 20px;
+  padding: 5px;
+  color: #00d1e4;
+  text-shadow: 3px 3px 5px #00565e, -3px 3px 5px #00565e, 3px -3px 5px #00565e,
+    -3px -3px 5px #00565e;
+  font-size: 45px;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+#comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#comment-input-box {
+  min-height: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 20px;
+  padding: 10px;
+  color: #00d1e4;
+  text-shadow: 3px 3px 5px #00565e, -3px 3px 5px #00565e, 3px -3px 5px #00565e,
+    -3px -3px 5px #00565e;
+}
+
+#comment-input-box::placeholder {
+  color: #00d1e4;
+  text-shadow: 3px 3px 5px #00565e, -3px 3px 5px #00565e, 3px -3px 5px #00565e,
+    -3px -3px 5px #00565e;
+}
+
+button {
+  background-color: black;
+  color: #04e762;
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+#editing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#edit-msg {
+  min-height: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 20px;
+  padding: 10px;
+  color: #ff51df;
+  text-shadow: 3px 3px 5px #5a1a4e, -3px 3px 5px #5a1a4e, 3px -3px 5px #423c41,
+    -3px -3px 5px #5a1a4e;
 }
