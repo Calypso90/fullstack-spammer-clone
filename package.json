@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "^5.7.0",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0"
   }
 }

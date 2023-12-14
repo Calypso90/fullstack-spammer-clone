@@ -21,7 +21,7 @@ export default function EditMessage({ message }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    fetch(`${API_URL}/api/posts/${message.id}`, {
+    fetch(`/api/posts/${message.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { API_URL } from "@/lib/API_URL.js";
 import { GiSpray } from "react-icons/gi";
 
 export default function PostMessage() {
@@ -13,7 +12,7 @@ export default function PostMessage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const response = await fetch(`${API_URL}/api/posts`, {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

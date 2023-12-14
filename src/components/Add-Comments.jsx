@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { FaRegComment } from "react-icons/fa";
-import { API_URL } from "@/lib/API_URL.js";
 import { useRouter } from "next/navigation";
 
 export default function AddComments({ message }) {
@@ -22,19 +21,16 @@ export default function AddComments({ message }) {
   async function handleSubmit(e) {
     e.preventDefault();
     if (newComment !== "") {
-      const response = await fetch(
-        `${API_URL}/api/posts/${message.id}/comments`,
-        {
-          method: "POST",
-          cache: "no-store",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            text: newComment,
-          }),
-        }
-      );
+      const response = await fetch(`/api/posts/${message.id}/comments`, {
+        method: "POST",
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: newComment,
+        }),
+      });
       const info = await response.json();
       setNewComment("");
       setIsCommenting(false);

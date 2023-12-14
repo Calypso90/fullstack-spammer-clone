@@ -2,6 +2,8 @@ import styles from "./globals.css";
 import MessageList from "@/components/Message-List.jsx";
 import PostMessage from "@/components/Post-Message.jsx";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div>
