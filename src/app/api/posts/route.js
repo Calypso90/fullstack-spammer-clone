@@ -18,7 +18,7 @@ export async function POST(request, response) {
       });
     }
 
-    const isExisting = await prisma.post.findFirst({ where: text });
+    const isExisting = await prisma.post.findFirst({ where: { text } });
     if (isExisting) {
       return NextResponse.json({
         success: false,
