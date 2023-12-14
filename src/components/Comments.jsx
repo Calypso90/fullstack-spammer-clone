@@ -5,6 +5,7 @@ export default async function Comments({ message }) {
     where: {
       postId: message.id,
     },
+    orderBy: { createdAt: "desc" },
   });
 
   return (

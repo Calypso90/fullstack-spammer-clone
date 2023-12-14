@@ -5,7 +5,6 @@ export async function POST(request, response) {
   try {
     const { postId } = response.params;
 
-    // if/else
     const post = await prisma.post.update({
       where: {
         id: postId,

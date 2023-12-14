@@ -17,6 +17,15 @@ export async function POST(request, response) {
         error: "You must provide text for your post.",
       });
     }
+
+    const isExisting = await prisma.post.findFirst({ where: text });
+    if (isExisting) {
+      return NextResponse.json({
+        success: false,
+        error: "Your entry must be unique.",
+      });
+    }
+
     const post = await prisma.post.create({ data: { text } });
     return NextResponse.json({ success: true, post });
   } catch (error) {
