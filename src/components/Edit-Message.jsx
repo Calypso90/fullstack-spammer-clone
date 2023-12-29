@@ -1,6 +1,5 @@
 "use client";
 import { FaRegEdit } from "react-icons/fa";
-import { API_URL } from "@/lib/API_URL.js";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
